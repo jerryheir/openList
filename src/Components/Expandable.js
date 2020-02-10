@@ -84,31 +84,16 @@ export default class Expandable extends React.Component {
     return (
         <View style={styles.mainContainer}>
            <Animated.View style={[styles.animatedBox, animatedStyle]}>
-               <View style={{
-                    height: HEIGHT,
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-               }}>
-                <View style={{
-                    flexDirection: 'row'
-                }}>
+               <View style={styles.main}>
+                <View style={styles.justRow}>
                     <Text style={styles.text}>Ride Requests</Text>
-                    <Text style={{
-                        paddingBottom: 5,
-                        paddingLeft: 5,
-                        fontSize: 18,
-                        fontWeight: 'bold',
-                        color: '#0091EA'
-                    }}>New</Text>
+                    <Text style={styles.newText}>New</Text>
                 </View>
                 <TouchableWithoutFeedback onPress={this.toggleAnimation}>
                         <Icon 
                         type="Feather"
                         name={viewState ? "chevron-up" : "chevron-down"}
-                        style={{
-                            color: '#26142a'
-                        }}
+                        style={styles.icon}
                         />
                 </TouchableWithoutFeedback>
                </View>
@@ -132,6 +117,12 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
     backgroundColor : '#c0c0c0'
   },
+  main: {
+    height: HEIGHT,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   animatedBox: {
     width: WIDTH,
     height: HEIGHT,
@@ -144,5 +135,18 @@ const styles = StyleSheet.create({
     color: '#26142a',
     fontSize: 24,
     fontWeight: 'bold'
+  },
+  justRow: {
+    flexDirection: 'row'
+  },
+  newText: {
+    paddingBottom: 5,
+    paddingLeft: 5,
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#0091EA'
+  },
+  icon: {
+    color: '#26142a'
   }
 });
