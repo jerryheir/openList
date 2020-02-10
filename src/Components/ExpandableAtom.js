@@ -5,7 +5,7 @@ import { Icon } from 'native-base';
 export default class ExpandableAtom extends React.PureComponent {
     render() {
         const { title, seat, from, to } = this.props.item;
-        const name = (title && title.length > 10) ? title.substring(0, 10) + '...' : title;
+        const name = (title && title.length > 13) ? title.substring(0, 10) + '...' : title;
         return (
             <View style={{
                 flexDirection: 'row',
